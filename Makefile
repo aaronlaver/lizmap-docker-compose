@@ -14,6 +14,15 @@ LIZMAP_DIR=$(shell pwd)/lizmap
 LIZMAP_USER_ID:=$(shell id -u)
 LIZMAP_USER_GID:=$(shell id -g)
 
+POSTGRES_DB=lizmap
+POSTGRES_USER=docker
+POSTGRES_PASS=docker
+POSTGRES_PORT=25432
+
+CLOUDCMD_USERNAME=docker
+CLOUDCMD_PASSWORD=docker
+CLOUDCMD_PORT=8000
+
 dirs:
 	@mkdir -p $(LIZMAP_DIR)/www/var/log \
 			  $(LIZMAP_DIR)/var/log/nginx \
@@ -36,6 +45,13 @@ env: dirs
 		echo "LIZMAP_PORT=$(LIZMAP_PORT)" >> .env;\
 		echo "OWS_PORT=$(OWS_PORT)" >> .env;\
 		echo "WPS_PORT=$(WPS_PORT)" >> .env;\
+		echo "POSTGRES_DB=$(POSTGRES_DB)" >> .env;\
+		echo "POSTGRES_USER=$(POSTGRES_USER)" >> .env;\
+		echo "POSTGRES_PASS=$(POSTGRES_PASS)" >> .env;\
+		echo "POSTGRES_PORT=$(POSTGRES_PORT)" >> .env;\
+		echo "CLOUDCMD_USERNAME=$(CLOUDCMD_USERNAME)" >> .env;\
+		echo "CLOUDCMD_PASSWORD=$(CLOUDCMD_PASSWORD)" >> .env;\
+		echo "CLOUDCMD_PORT=$(CLOUDCMD_PORT)" >> .env;\
 	}
 
 #
