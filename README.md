@@ -5,6 +5,8 @@ Run a complete Lizmap stack with test data.
 - Lizmap Web Client
 - QGIS Server
 - Redis
+- PostGIS
+- Cloud Commander
 
 **Note**: this is a sample configuration for testing Lizmap web client with QGIS and WPS features: 
 if you want use it on a production server you will need to make adjustments for meeting 
@@ -64,6 +66,12 @@ You need to :
 * visit http://localhost:8090/admin.php/admin/maps/
 * in the Lizmap admin panel, add the directory you created
 * add one or more QGIS projects with the Lizmap CFG file in the directory
+
+## Upload your own project online
+
+* set your login user and password for cloud commander in `Makefile`
+* visit http://localhost:8090/cloudcmd/
+* upload your own project directory to the server
 
 ## Reset the configuration
 

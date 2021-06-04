@@ -21,7 +21,6 @@ POSTGRES_PORT=25432
 
 CLOUDCMD_USERNAME=docker
 CLOUDCMD_PASSWORD=docker
-CLOUDCMD_PORT=8000
 
 dirs:
 	@mkdir -p $(LIZMAP_DIR)/www/var/log \
@@ -51,7 +50,6 @@ env: dirs
 		echo "POSTGRES_PORT=$(POSTGRES_PORT)" >> .env;\
 		echo "CLOUDCMD_USERNAME=$(CLOUDCMD_USERNAME)" >> .env;\
 		echo "CLOUDCMD_PASSWORD=$(CLOUDCMD_PASSWORD)" >> .env;\
-		echo "CLOUDCMD_PORT=$(CLOUDCMD_PORT)" >> .env;\
 	}
 
 #

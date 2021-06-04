@@ -76,18 +76,17 @@ services:
       - POSTGRES_MULTIPLE_EXTENSIONS=postgis,hstore,postgis_topology,postgis_raster,pgrouting
     ports:
       - ${POSTGRES_PORT}:5432
-    restart: on-failure
+    restart: unless-stopped
     healthcheck:
       test: "exit 0"
-  cloud: 
+  cloudcmd: 
     # https://cloudcmd.io
-    ports:
-      - ${CLOUDCMD_PORT}:8000
     environment:
       - CLOUDCMD_AUTH=true
       - CLOUDCMD_USERNAME=${CLOUDCMD_USERNAME}
       - CLOUDCMD_PASSWORD=${CLOUDCMD_PASSWORD}
       - CLOUDCMD_ROOT=/lizmap
+      - CLOUDCMD_PREFIX=/cloudcmd
     volumes:
       # - ~:/root
       - ${LIZMAP_DIR}/instances:/lizmap
