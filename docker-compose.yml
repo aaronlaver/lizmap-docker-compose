@@ -61,6 +61,7 @@ services:
       - ${LIZMAP_PORT}:8080
     depends_on:
       - lizmap
+      - cloudcmd
   db:
     # https://github.com/kartoza/docker-postgis
     image: kartoza/postgis:13-3.1
